@@ -1,2 +1,0 @@
-2017-04-15 05:10:13,493 [Thread-2:123145310715904] [blog.views:33] [views:base] [ERROR]- [Errno 2] No such file or directory: 'aaaa.txt'
-2017-04-15 05:10:13,551 [Thread-3:123145314922496] [blog.views:33] [views:base] [ERROR]- [Errno 2] No such file or directory: 'aaaa.txt'
