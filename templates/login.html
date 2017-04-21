@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link href="/static/form.css" rel="stylesheet" type="text/css">
+	<style type="text/css">
+		.subrigth{
+
+			background-color: #666;
+			border: 1px solid #999;
+			border-radius: 5px;
+			width: 400px;
+			height: 300px;
+			box-shadow: 2px 2px 5px #060606;
+
+			position: absolute;
+    			top: 50%;
+    			right: 10%;
+    			margin-top: -125px;
+    			margin-left: -30px;
+		   	opacity:0.9;
+		 
+		}
+		.img{
+			background-image: url(/static/login.jpg);
+			background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+		}
+	</style>
+</head>
+<body class="img">
+	<div id="subright" class="subrigth "> 
+		<form class="dark-matter" action="/app/base/login/" method="POST">
+			<input type="text" name="username" placeholder="username：">
+			<input type="password" name="pwd" placeholder="password：">
+			<input type="textarea"  >
+			<input type="submit"  >
+			<span  id="content" style=" color:red;display:inline-block;font-size: 2px;font-style: oblique;font-family: cursive;">{{status}}</span>
+		</form>
+	</div>
+</body>
+</html>

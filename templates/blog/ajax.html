@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="/static/jquery-3.2.0.js"></script>
+</head>
+<body>
+ <span>
+            导航: <select id="select_type" >
+                  {% for item in callable_list %}
+                    <option  >{{ item }}</option>
+                  {% endfor %}
+             </select>
+        </span>
+
+<button onclick="DoAjax()">Sure</button><br>
+
+   文章: <select id="select_re"></select>
+
+<script>
+    function DoAjax() {
+    var temp = $('#select_type').val();
+    $.ajax({
+        url: '/blog/ajax',
+        type: 'POST',
+        data:temp ,
+        success: function(arg){
+            console.log(arg)
+
+        },
+        error: function(){
+            console.log("failed")
+        }
+
+    })
+}
+
+</script>
+</body>
+</html>

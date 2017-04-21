@@ -1,0 +1,20 @@
+{%  extends "master_templates/master.html"%}
+{% block userinfo%}
+	<table class="imagetable">
+		<tr>
+			<th>用户名</th>
+			<th>密码</th>
+			<th>first_name</th>
+			<th>last_name</th>
+		</tr>
+		{% for user in data%}
+		<tr>
+			<th>{{ user.username}}</th>
+			<th>{{ user.password}}</th>
+			<th>{{ user.first_name}}</th>
+			<th>{{ user.last_name}}</th>
+		</tr>
+		{% endfor%}
+	</table>
+
+{% endblock%}

@@ -1,0 +1,23 @@
+table.imagetable{
+	font-family:verdana, arial, sans-serif;
+	font-size:11px;
+	color:#333333;
+	width: 100%;
+	border-width:1px;
+	border-color:#999999;
+	border-collapse:collapse;
+}
+table.imagetable th{
+	background: #b5cfd2 url('down-arrow.png') ;
+	padding:8px;
+	border-width:1px;
+	border-style:solid;
+	border-color:#999999;
+}
+table.imagetable td{
+	background: #dcddc0 url('down-arrow.png') ;
+	padding:8px;
+	border-width:1px;
+	border-style:solid;
+	border-color:#999999;
+}

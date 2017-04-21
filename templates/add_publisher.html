@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>添加出版社信息</title>
+    <link href="/static/form.css" rel="stylesheet" type="text/css">
+</head>
+<body style="background-color: #b5cfd2">
+    <form class="dark-matter", action="{% url 'add' %}" method="POST">
+        {% csrf_token %}
+        {{ publisher_form.as_p}}
+        <input type="submit" values="提交">
+    </form>
+
+</body>
+</html>

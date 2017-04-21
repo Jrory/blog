@@ -1,0 +1,30 @@
+{% extends 'blog/base/base.html' %}
+{% load staticfiles %}
+{% block sub_left %}
+
+<div class="l_box f_l">
+
+    {% include "blog/comm/comm_ad.html" %}
+
+    <div class="topnews">
+      <h2>最新文章</h2>
+        {% for item in article_list %}
+          <div class="blogs">
+            <ul>
+              <h3><a href="{% url "article" %}?id={{ item.id }}">{{ item.title }}</a></h3>
+
+                <p>{{ item.desc }}</p>
+              <p class="autor">
+                  <span class="lm f_l">{% for tag in item.tag.all %}<a href="/">{{ tag.name }} &nbsp;</a>{% endfor %}</span>
+                  <span class="dtime f_l">{{ item.date_publish | date:'Y-m-d' }}</span>
+                  <span class="viewnum f_r">浏览（<a href="/">{{ item.click_count }}</a>）</span>
+                  <span class="pingl f_r">评论（<a href="/">{{ item.comment_set.all.count }}</a>）</span>
+              </p>
+            </ul>
+          </div>
+        {% endfor %}
+    </div>
+    {% include 'blog/comm/comm_pagination.html' %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{%  extends "master_templates/master.html"%}
+{% load my %}
+{% block contents %}
+	<h2>{{ user }}</h2>
+	<table style="border:solid #999 ;border-top: 1px;border-left: 1px;border-collapse: collapse;">
+		<tr>
+				<td style="border:solid #999 ;border-bottom: 1px;border-right: 1px;">hostname</td>
+				<td style="border:solid #999 ;border-bottom: 1px;border-right: 1px;">password</td>
+				<td style="border:solid #999 ;border-bottom: 1px;border-right: 1px;">password_new</td>
+		</tr>
+		{% for item in data %}
+			<tr style="border:solid #999 ;border-bottom: 1px;border-right: 1px;">
+				<td style="border:solid #999 ;border-bottom: 1px;border-right: 1px;">{{ item.username}}</td>
+				<td style="border:solid #999 ;border-bottom: 1px;border-right: 1px;">{{ item.password}}</td>
+				<td style="border:solid #999 ;border-bottom: 1px;border-right: 1px;">{% my_tag item.password %}</td>
+			</tr>
+		{% endfor%}
+	</table>
+	{% ifequal user 'Rory' %}
+			<div>hello {{user}}</div>
+	{% else%}
+			<div></div>
+	{% endifequal%}
+{% endblock%}
